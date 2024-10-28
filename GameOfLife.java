@@ -42,7 +42,7 @@ public class GameOfLife implements ActionListener {
         frame.setVisible(true);
 
         // Inicializa el estado del juego
-        for (int i = 0; i < SIZE * 10; i++) {
+        for (int i = 0; i < SIZE * 15; i++) {
             current[(int) (Math.random() * SIZE)][(int) (Math.random() * SIZE)] = true;
         }
 
