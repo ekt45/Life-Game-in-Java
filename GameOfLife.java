@@ -19,7 +19,6 @@ public class GameOfLife implements ActionListener {
         frame.setSize(600, 600); // Ajusta el tamaño del frame
         frame.setLayout(new BorderLayout()); // Cambia a BorderLayout
 
-        // Configura el panel de la cuadrícula con GridLayout SIZExSIZE
         gridPanel.setLayout(new GridLayout(SIZE, SIZE));
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
@@ -29,19 +28,16 @@ public class GameOfLife implements ActionListener {
             }
         }
 
-        // Añade el botón al panel inferior
         JPanel bottomPanel = new JPanel();
         button.setPreferredSize(new Dimension(100, 40));
         bottomPanel.add(button);
         button.setBackground(Color.orange);
         button.addActionListener(this);
 
-        // Añade los paneles al frame
         frame.add(gridPanel, BorderLayout.CENTER); // Cuadrícula en el centro
         frame.add(bottomPanel, BorderLayout.NORTH); // Botón en la parte inferior
         frame.setVisible(true);
 
-        // Inicializa el estado del juego
         for (int i = 0; i < SIZE * 15; i++) {
             current[(int) (Math.random() * SIZE)][(int) (Math.random() * SIZE)] = true;
         }
